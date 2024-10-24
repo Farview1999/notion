@@ -12,7 +12,6 @@
         body{
             font-variant-caps: all-petite-caps;
 
-
         }
 
         .widget {
@@ -29,12 +28,10 @@
             box-shadow: 2px 2px 1px 0px #000000;
 
         }
-
-           
+ 
         .greet{
             font-size: 3em;
         }
-
         .date {
       
             font-family: monospace;
@@ -56,18 +53,10 @@
             display: inline-block;
         }
 
-     
-
-
-
-
     </style>
 </head>
 <body>
-
-
-
-
+    
 <div class="container>">
     <div class="widget">
 
@@ -87,15 +76,12 @@
 
     </div>
 </div>
-        
-
-
 
 <script>
 
 function dispalyGreetings(today){
         hrs = today.getHours();
-        name=""
+        name="Fiw :)"
         if (hrs < 12)
             greet = 'Good Morning  '+name;
         else if (hrs >= 12 && hrs <= 17)
@@ -117,38 +103,21 @@ function dispalyGreetings(today){
         var monthName = monthNames[today.getMonth()];
         var date = today.getDate();
         var year = today.getFullYear();
-        document.getElementById('date').innerHTML =dayName+", "+monthName+" "+date+" "+year;
+        document.getElementById('date').innerHTML =dayName+", "+date+" "+monthName+" "+year;
 
     }
 
-
     function dispalyClock(today) {
 
-        var hour = padZeros(twelveHour(today.getHours()));
+        var hour = padZeros(today.getHours());
         var minutes = padZeros(today.getMinutes());
         var seconds = padZeros(today.getSeconds());
-       
-        if(today.getHours() >=12){
-            seconds+=" pm"
-        }
-        else{
-            seconds+=" am"
-        }
-       
+           
         document.getElementById('hour').innerHTML = hour;
         document.getElementById('min').innerHTML = minutes;
         document.getElementById('sec').innerHTML = seconds;
     }
 
-    function twelveHour(hour) {
-        if (hour > 12) {
-            return hour -= 12
-        } else if (hour === 0) {
-            return hour = 12;
-        } else {
-            return hour
-        }
-    }
     function padZeros(num) {
         if (num < 10) {
             num = '0' + num
@@ -161,7 +130,7 @@ function dispalyGreetings(today){
         dispalyGreetings(today);
         dispalyDate(today);
         dispalyClock(today);
-        setTimeout(dispalyWidget, 500);
+        setTimeout(dispalyWidget, 600);
     }
 
     dispalyWidget()
